@@ -19,3 +19,42 @@ int main()
     check_memory();
   return 0;
 }
+
+// Armstrong number checker 
+
+int main(void)
+{
+  int number, count =0, result=0, multiply=1, cnt, rem;
+  printf("Enter a number\n");
+  scanf("%d", &number);
+
+  int q = number;
+
+  while(q!=0)
+  {
+    q = q/10;
+    count++;
+  }
+  
+  printf("Number of digits in %d is %d\n", number, count);
+
+  cnt = count;
+  q = number;
+  while(q!=0)
+  {
+    rem = q%10;
+    while(cnt != 0)
+    {
+      multiply = multiply*rem;
+      cnt--;
+    }
+    result= result+ multiply;
+    cnt = count;
+    q = q/10;
+    multiply=1;
+  }
+  if (result == number)
+    printf("%d is an Armstrong number", number);
+  else 
+    printf("%d is not an Armstrong", number);
+}
