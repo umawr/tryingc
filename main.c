@@ -58,3 +58,47 @@ int main(void)
   else 
     printf("%d is not an Armstrong", number);
 }
+
+// Armstrong number chencker but for an interval
+
+int main(void)
+{
+  int a, b, i, q, number, count = 0, result = 0, multiply = 1, cnt, rem;
+  printf("Enter a number interval\n");
+  scanf("%d %d", &a, &b);
+
+  for (i = a; i <= b; i++)
+  {
+    q = i;
+    count = 0;
+    while (q != 0)
+    {
+      q = q / 10;   
+      count++;
+    }
+    
+    cnt = count;
+    q = i;
+    result = 0;
+    
+    while (q != 0)
+    {
+      rem = q % 10;
+      multiply = 1;
+      
+      for (int c = 0; c < count; c++)
+      {
+        multiply = multiply * rem;
+      }
+      
+      result = result + multiply;
+      q = q / 10;
+    }
+
+    if (result == i)
+    {
+      printf("%d is an Armstrong number\n", i);
+    }
+  }  
+  return 0;
+}
