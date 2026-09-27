@@ -61,44 +61,43 @@ int main(void)
 
 // Armstrong number chencker but for an interval
 
+
 int main(void)
 {
-  int a, b, i, q, number, count = 0, result = 0, multiply = 1, cnt, rem;
+  int a,q, b, i, number, count =0, result=0, multiply=1, cnt, rem;
   printf("Enter a number interval\n");
   scanf("%d %d", &a, &b);
-
-  for (i = a; i <= b; i++)
+  
+for (i = a; i <= b; i++)
+{
+  q = i;
+  while(q!=0)
   {
-    q = i;
-    count = 0;
-    while (q != 0)
+    q = q/10;
+    count++;
+  }
+  
+  cnt = count;
+  q = i;
+  while(q!=0)
+  {
+    rem = q%10;
+    while(cnt != 0)
     {
-      q = q / 10;   
-      count++;
+      multiply = multiply*rem;
+      cnt--;
     }
-    
+    result= result+ multiply;
     cnt = count;
-    q = i;
-    result = 0;
-    
-    while (q != 0)
-    {
-      rem = q % 10;
-      multiply = 1;
-      
-      for (int c = 0; c < count; c++)
-      {
-        multiply = multiply * rem;
-      }
-      
-      result = result + multiply;
-      q = q / 10;
-    }
+    q = q/10;
+    multiply=1;
+  }
 
-    if (result == i)
-    {
-      printf("%d is an Armstrong number\n", i);
-    }
-  }  
+  if (result == i)
+    printf("%d is an Armstrong number\n", i);
+  else ;
+  count =0;
+  result =0;
+}  
   return 0;
 }
