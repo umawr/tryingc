@@ -101,3 +101,47 @@ for (i = a; i <= b; i++)
 }  
   return 0;
 }
+
+// Checks strong numbers in an interval
+
+int factorial(int p);
+
+int main(void)
+{
+  int a, b, u, i, q, rem, count = 0, digit =0, resultf, result=0;
+  printf("Enter the interval\n");
+  scanf("%d %d", &a, &b);
+  
+  for (u = a; u <= b; u++)
+  {
+    q = u;
+    while(q != 0)
+    {
+      q = q/10;
+      count++;
+    }
+    q = u;
+    for (i=1; i <= count; i++)
+    {
+      rem = q % 10;
+      q = q/10;
+      digit= factorial(rem);
+      result = result + digit;
+    }
+    if(result==u)
+    printf("%d is a strong number\n", u);
+    else;
+    // printf("%d is not a strong number\n", u);
+    count=0;
+    result=0;
+  }
+  return 0;
+}
+
+int factorial(int p)
+{
+  int i, resultf =1;
+  for (i=1; i<= p; i++)
+    resultf *= i;
+  return resultf;
+}
