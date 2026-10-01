@@ -145,3 +145,21 @@ int factorial(int p)
     resultf *= i;
   return resultf;
 }
+
+// recursive program
+
+int Fact(int n)
+{
+  int n;
+  printf("Enter a number\n");
+  scanf("%d", &n); 
+  if (condition)
+  {
+    /* code */
+  }
+  else 
+  {
+    return n * Fact(n-1);
+  }
+  
+}
