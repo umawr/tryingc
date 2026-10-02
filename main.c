@@ -166,3 +166,19 @@ int main()
   scanf("%d", &n);
   printf("Factorial of %d is %d\n", n, Fact(n)); 
 }
+
+//factorial using recursions
+
+int fac(int n);
+int main()
+{
+  int n;
+  printf("Enter number to calculate its factorial\n");
+  scanf("%d", &n);
+  printf("Its factorial is %lld\n", fac(n));
+}
+int fac(int n)
+{
+  if (n == 0) return 1;
+  return  n * fac(n-1);
+}
