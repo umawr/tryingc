@@ -182,3 +182,28 @@ int fac(int n)
   if (n == 0) return 1;
   return  n * fac(n-1);
 }
+
+// max min of array using pointers
+
+void minmax(int arr[], int len, int *min, int *max);
+int main()
+{
+  int a[] = {1, 2, 3, 5, 23, 45, 323, 0, -1};
+  int min, max;
+  int len = sizeof(a)/sizeof(a[0]);
+  minmax(a, len, &min ,&max);
+  printf("THe max is %d and min is %d\n", max, min);
+  return 0;
+}
+void minmax(int arr[], int len, int *min, int *max)
+{
+  *min = *max = arr[0];
+  int i;
+  for(i = 1; i < len; i++)
+  {
+    if(arr[i] > *max)
+      *max = arr[i];
+    if(arr[i] < *min)
+      *min = arr[i];
+  }
+}
