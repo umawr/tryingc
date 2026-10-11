@@ -207,3 +207,15 @@ void minmax(int arr[], int len, int *min, int *max)
       *min = arr[i];
   }
 }
+
+// Pointer math
+
+int main()
+{
+  int a[] = {5, 16, 7, 89, 45, 32, 23, 10};
+  int *p = &a[1], *q = &a[5];
+  printf("%d\n", (q-p) * sizeof(a[0]));
+  printf("Hex: %X, Dec: %d\n", q, q);
+  printf("Hex: %X, Dec: %d\n", q-p, q-p);
+  printf("Hex: %X, Dec: %d\n", p, p);
+}
