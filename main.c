@@ -219,3 +219,18 @@ int main()
   printf("Hex: %X, Dec: %d\n", q-p, q-p);
   printf("Hex: %X, Dec: %d\n", p, p);
 }
+
+// program that takes input and stores them in an array and prints it backward
+
+int main()
+{
+    int arr[5], *p;
+    printf("enter 5 numbers in the array\n");
+    for ( p = arr ; p <= arr + 4; p++)
+        scanf("%d", p);
+
+    printf("Elements in reverse order\n");
+    for ( p = arr + 4; p >= arr; p--)
+        printf("%d ", *p);
+    return 0;
+}
