@@ -183,6 +183,19 @@ int fac(int n)
   return  n * fac(n-1);
 }
 
+void print(int a)
+{
+    if (a<1)
+        return;
+    else 
+        printf("%d\n", a);
+    print(a/2);
+}
+void main()
+{
+    print(10);
+}
+
 // max min of array using pointers
 
 void minmax(int arr[], int len, int *min, int *max);
