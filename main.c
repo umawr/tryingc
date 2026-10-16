@@ -1,4 +1,21 @@
 #include<stdio.h>
+// recursions w/ pointers
+
+long long fact(int n)
+{
+    if (n == 0)
+        return 1;
+    else 
+        return n * fact(n-1);
+}
+int main()
+{
+    int n, *p;
+    printf("Enter number\n");
+    scanf("%d", &n);
+    p = &n;
+    printf("%lld", fact(*p));
+}
 
 // palindrome checker
 
