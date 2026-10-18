@@ -1,4 +1,5 @@
 #include<stdio.h>
+
 // recursions w/ pointers
 
 long long fact(int n)
